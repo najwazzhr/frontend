@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Latihan JavaScript</title>
+</head>
+<body>
+    <label>Nama Depan</label><br>
+    <input type="text" id="namaDepan"><br><br>
+
+    <label>Nama Belakang</label><br>
+    <input type="text" id="namaBelakang"><br><br>
+
+    <button onclick="tampil()">Button</button>
+
+    <script>
+        function tampil() {
+            let depan = document.getElementById("namaDepan").value;
+            let belakang = document.getElementById("namaBelakang").value;
+            alert("Hai " + depan + " " + belakang);
+        }
+    </script>
+</body>
+</html>

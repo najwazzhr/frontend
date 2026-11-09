@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Form Registrasi Simple</title>
+  <style>
+    body { font-family: sans-serif; padding: 20px; }
+    .form-group { margin-bottom: 15px; }
+    label { display: block; margin-bottom: 5px; }
+    input { padding: 8px; width: 250px; }
+    button { padding: 8px 16px; cursor: pointer; }
+  </style>
+</head>
+<body>
+
+  <h2>Form Registrasi</h2>
+  <div class="form-group">
+    <label for="namaDepan">Nama Depan</label>
+    <input type="text" id="namaDepan">
+  </div>
+
+  <div class="form-group">
+    <label for="namaBelakang">Nama Belakang</label>
+    <input type="text" id="namaBelakang">
+  </div>
+
+  <div class="form-group">
+    <label for="nilaiAngka">Nilai Angka</label>
+    <input type="number" id="nilaiAngka" min="0" max="100">
+  </div>
+
+  <button onclick="submitForm()">Submit</button>
+
+  <script>
+    function submitForm() {
+      const namaDepan = document.getElementById('namaDepan').value;
+      const namaBelakang = document.getElementById('namaBelakang').value;
+      const nilaiAngka = parseFloat(document.getElementById('nilaiAngka').value) || 0;
+
+      let nilaiHuruf = 'E';
+      if (nilaiAngka >= 85) nilaiHuruf = 'A';
+      else if (nilaiAngka >= 70) nilaiHuruf = 'B';
+      else if (nilaiAngka >= 55) nilaiHuruf = 'C';
+      else if (nilaiAngka >= 40) nilaiHuruf = 'D';
+
+      console.log(`Nama Lengkap : ${namaDepan} ${namaBelakang}`);
+      console.log(`Nilai Angka        : ${nilaiAngka}`);
+      console.log(`Nilai Huruf         : ${nilaiHuruf}`);
+    }
+  </script>
+
+</body>
+</html>
